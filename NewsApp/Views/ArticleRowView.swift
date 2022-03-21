@@ -19,13 +19,16 @@ struct ArticleRowView: View {
                     
                 switch phase {
                 case .empty:
-                    ProgressView()
-                
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                        Spacer()
+                    }
+                    
                 case .success(let image):
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(height: 1)
                                          
                 case .failure:
                     Image(systemName: "photo")
@@ -35,6 +38,7 @@ struct ArticleRowView: View {
                 }
             }
             .frame(minHeight: 200, maxHeight: 300)
+            .background(Color.gray.opacity(0.3))
         }
     }
 }
