@@ -15,6 +15,7 @@ enum DataFetchPhase<T> {
     case failure(Error)
 }
 
+@MainActor
 class ArticleNewsViewModel: ObservableObject {
     
     @Published var phase = DataFetchPhase<[Article]>.empty
