@@ -16,18 +16,18 @@ struct NewsTabView: View {
         NavigationView {
             ArticleListView(articles: articles)
                 .overlay(overlayView)
-            
+                .task(id: articlesNewsVM.selectedCategory, loadTask)
             //pull to refresh method
-                .refreshable {
-                    loadTask()
-                }
+//                .refreshable {
+//                    loadTask()
+//                }
             //fetching the data
-                .onAppear(perform: {
-                   loadTask()
-                })
-                .onChange(of: articlesNewsVM.selectedCategory, perform: { _ in
-                    loadTask()
-                })
+//                .onAppear(perform: {
+//                   loadTask()
+//                })
+//                .onChange(of: articlesNewsVM.selectedCategory, perform: { _ in
+//                    loadTask()
+//                })
                 .navigationTitle(articlesNewsVM.selectedCategory.text)
                 .navigationBarItems(trailing: menu)
         }
@@ -44,17 +44,15 @@ struct NewsTabView: View {
                  EmptyPlaceholderView(text: "No articles", image: nil)
             case .failure(let error):
                  RetryView(text: error.localizedDescription) {
-                     loadTask()
+//                     loadTask()
             }
 
             default: EmptyView()
             }
     }
 
-    private func loadTask() {
-        async {
+    @Sendable private func loadTask() async {
         await articlesNewsVM.loadArticles()
-        }
     }
     
     // creating the options for you to click whichever category you want
