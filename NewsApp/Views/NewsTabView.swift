@@ -29,7 +29,7 @@ struct NewsTabView: View {
 //                .onChange(of: articlesNewsVM.selectedCategory, perform: { _ in
 //                    loadTask()
 //                })
-                .navigationTitle(articlesNewsVM.selectedCategory.text)
+                .navigationTitle(articlesNewsVM.fetchTaskToken.category.text)
                 .navigationBarItems(trailing: menu)
         }
     }
@@ -59,7 +59,7 @@ struct NewsTabView: View {
     // creating the options for you to click whichever category you want
     private var menu: some View {
         Menu {
-            Picker("Category", selection: $articlesNewsVM.selectedCategory) {
+            Picker("Category", selection: $articlesNewsVM.fetchTaskToken.category) {
                 ForEach(Category.allCases) {
                     Text($0.text).tag($0)
                 }
