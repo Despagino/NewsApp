@@ -26,7 +26,7 @@ struct NewsTabView: View {
                    loadTask()
                 })
                 .navigationTitle(articlesNewsVM.selectedCategory.text)
-            
+                .navigationBarItems(trailing: menu)
         }
     }
     
@@ -51,6 +51,20 @@ struct NewsTabView: View {
     private func loadTask() {
         async {
         await articlesNewsVM.loadArticles()
+        }
+    }
+    
+    // creating the options for you to click whichever category you want
+    private var menu: some View {
+        Menu {
+            Picker("Category", selection: $articlesNewsVM.selectedCategory) {
+                ForEach(Category.allCases) {
+                    Text($0.text).tag($0)
+                }
+            }
+        } label: {
+            Image(systemName: "fiberchannel")
+                .imageScale(.large)
         }
     }
     
