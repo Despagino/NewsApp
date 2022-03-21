@@ -16,7 +16,10 @@ struct ArticleListView: View {
             ForEach(articles) { article in
                 ArticleRowView(article: article)
             }
+            .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+            .listRowSeparator(.visible)
         }
+        .listStyle(.plain)
     }
 }
 
