@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct NewsTabView: View {
+    
+    @StateObject var articlesNewsVM = ArticleNewsViewModel()
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ArticleListView(articles: articles)
+                .navigationTitle(articlesNewsVM.selectedCategory.text)
+            
+        }
+    }
+    
+    // getting the data from the enum
+    private var articles: [Article] {
+        if case let .success(articles) = articlesNewsVM.phase {
+            return articles
+        } else {
+            return []
+        }
     }
 }
 
 struct NewsTabView_Previews: PreviewProvider {
     static var previews: some View {
-        NewsTabView()
+        NewsTabView(articlesNewsVM: ArticleNewsViewModel(articles: Article.previewData))
     }
 }
