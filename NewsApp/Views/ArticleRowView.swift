@@ -56,6 +56,28 @@ struct ArticleRowView: View {
                 Text(article.descriptionText)
                     .font(.subheadline)
                     .lineLimit(3)
+                
+                HStack {
+                    Text(article.captionText)
+                        .lineLimit(1)
+                        .foregroundColor(.secondary)
+                        .font(.caption)
+                    
+                    Spacer()
+                    
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "bookmark")
+                    }
+                    .buttonStyle(.bordered)
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "square.and.arrow.up")
+                    }
+                    .buttonStyle(.bordered)
+                }
             }
             .padding([.horizontal, .bottom])
         }
