@@ -5,13 +5,41 @@
 //  Created by Gino Tasis on 3/21/22.
 //
 
-import Foundation
+
 import SwiftUI
+
+enum DataFetchPhase<T> {
+    
+    case empty
+    case success(T)
+    case failure(Error)
+}
 
 class ArticleNewsViewModel: ObservableObject {
     
-    let articles = [Article]
+    @Published var phase = DataFetchPhase<[Article]>.empty
+    @Published var selectedCategory: Category
+    private let newsAPI = NewsAPI.shared
     
+    init(articles: [Article]? = nil, selectedCategory: Category = .general) {
+        if let articles = articles {
+            self.phase = .success(articles)
+        } else {
+            self.phase = .empty
+        }
+        self.selectedCategory = selectedCategory
+    }
     
+    func loadArticles() async {
+        
+        phase = .empty
+        do {
+            let articles = try await newsAPI.fetch(from: selectedCategory)
+            phase = .success(articles)
+        } catch {
+            phase = .failure(error)
+        }
+        
+    }
     
 }
