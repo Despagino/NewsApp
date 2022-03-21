@@ -26,6 +26,19 @@ struct NewsTabView: View {
         }
     }
     
+    @ViewBuilder
+    private var overlayView: some View {
+        
+            switch articlesNewsVM.phase {
+                
+            case .empty: ProgressView()
+            case .success(let articles) where articles.isEmpty:
+                
+                
+            default: EmptyView()
+            }
+    }
+    
     // getting the data from the enum
     private var articles: [Article] {
         if case let .success(articles) = articlesNewsVM.phase {
@@ -35,9 +48,10 @@ struct NewsTabView: View {
         }
     }
 }
-
+`
 struct NewsTabView_Previews: PreviewProvider {
     static var previews: some View {
         NewsTabView(articlesNewsVM: ArticleNewsViewModel(articles: Article.previewData))
     }
 }
+
