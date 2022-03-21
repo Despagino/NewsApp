@@ -64,7 +64,7 @@ extension Article {
         // using this format we will conform to the swift native date type
         jsonDecoder.dateDecodingStrategy = .iso8601
         
-        
-        
+        let apiResponses = try! jsonDecoder.decode(NewsAPIResponse.self, from: data)
+        return apiResponses.articles ?? []
     }
 }
