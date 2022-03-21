@@ -19,16 +19,7 @@ struct NewsTabView: View {
             // everytime the timestamp changes, this function will trigger
                 .task(id: articlesNewsVM.fetchTaskToken, loadTask)
             //pull to refresh method
-                .refreshable {
-                    loadTask()
-                }
-            //fetching the data
-//                .onAppear(perform: {
-//                   loadTask()
-//                })
-//                .onChange(of: articlesNewsVM.selectedCategory, perform: { _ in
-//                    loadTask()
-//                })
+                .refreshable(action: refreshTask)
                 .navigationTitle(articlesNewsVM.fetchTaskToken.category.text)
                 .navigationBarItems(trailing: menu)
         }
@@ -44,9 +35,7 @@ struct NewsTabView: View {
             case .success(let articles) where articles.isEmpty:
                  EmptyPlaceholderView(text: "No articles", image: nil)
             case .failure(let error):
-                 RetryView(text: error.localizedDescription) {
-//                     loadTask()
-            }
+                 RetryView(text: error.localizedDescription, retryAction: refreshTask) 
 
             default: EmptyView()
             }
@@ -54,6 +43,10 @@ struct NewsTabView: View {
 
     @Sendable private func loadTask() async {
         await articlesNewsVM.loadArticles()
+    }
+    
+    @Sendable private func refreshTask() {
+        articlesNewsVM.fetchTaskToken = FetchTaskToken(category: articlesNewsVM.fetchTaskToken.category, token: Date())
     }
     
     // creating the options for you to click whichever category you want
