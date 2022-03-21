@@ -41,12 +41,16 @@ struct ArticleRowView: View {
 
 struct ArticleRowView_Previews: PreviewProvider {
     static var previews: some View {
-        List {
-            ArticleRowView(article: .previewData[0])
-            //creating how each row would be set in the each frame
-                .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+        NavigationView {
+                
+            List {
+                ArticleRowView(article: .previewData[0])
+                //creating how each row would be set in the each frame
+                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+            }
+            // creating the style of the list
+            .listStyle(.plain)
+     
         }
-        // creating the style of the list
-        .listStyle(.plain)
     }
 }
