@@ -32,7 +32,8 @@ struct NewsTabView: View {
             switch articlesNewsVM.phase {
                 
             case .empty: ProgressView()
-            case .success(let articles) where articles.isEmpty:
+            case .success(let articles) where articles.isEmpty: EmptyPlaceholderView(text: "No articles", image: nil)
+            case .failure(let error): 
                 
                 
             default: EmptyView()
@@ -48,7 +49,7 @@ struct NewsTabView: View {
         }
     }
 }
-`
+
 struct NewsTabView_Previews: PreviewProvider {
     static var previews: some View {
         NewsTabView(articlesNewsVM: ArticleNewsViewModel(articles: Article.previewData))
