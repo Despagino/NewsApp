@@ -27,6 +27,7 @@
 		D36BC02127E8EE0700522F6A /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		D36BC02327E8F23400522F6A /* NewsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIResponse.swift; sourceTree = "<group>"; };
 		D36BC02627E8F3F200522F6A /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
+		D36BC02827E8FA8300522F6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +60,7 @@
 		D36BC00F27E8E59000522F6A /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				D36BC02827E8FA8300522F6A /* Info.plist */,
 				D36BC02527E8F3E400522F6A /* Views */,
 				D36BC02027E8EDFD00522F6A /* Models */,
 				D36BC01027E8E59000522F6A /* NewsAppApp.swift */,
@@ -304,6 +306,7 @@
 				DEVELOPMENT_TEAM = J9FG8B64JQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -334,6 +337,7 @@
 				DEVELOPMENT_TEAM = J9FG8B64JQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
