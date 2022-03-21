@@ -13,7 +13,9 @@ struct ArticleListView: View {
     
     var body: some View {
         List {
-            
+            ForEach(articles) { article in
+                ArticleRowView(article: article)
+            }
         }
     }
 }
