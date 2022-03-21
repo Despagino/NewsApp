@@ -16,7 +16,7 @@ struct ArticleRowView: View {
         VStack (alignment: .leading, spacing: 16) {
             
             AsyncImage(url: article.imageURL) { phase in
-                
+                    
                 switch phase {
                 case .empty:
                     ProgressView()
@@ -25,9 +25,14 @@ struct ArticleRowView: View {
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                 
+                        .frame(height: 1)
+                        
+                                         
                 case .failure:
                     Image(systemName: "photo")
+                
+                @unknown default:
+                    fatalError()
                 }
             }
         }
@@ -38,7 +43,7 @@ struct ArticleRowView_Previews: PreviewProvider {
     static var previews: some View {
         List {
             ArticleRowView(article: .previewData[0])
-            //creatinmg how each row would be set in the each frame
+            //creating how each row would be set in the each frame
                 .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
         // creating the style of the list
