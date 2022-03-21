@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D30F41E827E9054C00BE43DD /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30F41E727E9054C00BE43DD /* ArticleListView.swift */; };
 		D36BC01127E8E59000522F6A /* NewsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36BC01027E8E59000522F6A /* NewsAppApp.swift */; };
 		D36BC01327E8E59000522F6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36BC01227E8E59000522F6A /* ContentView.swift */; };
 		D36BC01527E8E59200522F6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36BC01427E8E59200522F6A /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D30F41E727E9054C00BE43DD /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		D36BC00D27E8E59000522F6A /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36BC01027E8E59000522F6A /* NewsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppApp.swift; sourceTree = "<group>"; };
 		D36BC01227E8E59000522F6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				D36BC02627E8F3F200522F6A /* ArticleRowView.swift */,
+				D30F41E727E9054C00BE43DD /* ArticleListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D36BC01327E8E59000522F6A /* ContentView.swift in Sources */,
+				D30F41E827E9054C00BE43DD /* ArticleListView.swift in Sources */,
 				D36BC02727E8F3F200522F6A /* ArticleRowView.swift in Sources */,
 				D36BC01127E8E59000522F6A /* NewsAppApp.swift in Sources */,
 				D36BC02427E8F23400522F6A /* NewsAPIResponse.swift in Sources */,
