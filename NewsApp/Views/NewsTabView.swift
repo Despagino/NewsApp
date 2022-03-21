@@ -15,6 +15,12 @@ struct NewsTabView: View {
     var body: some View {
         NavigationView {
             ArticleListView(articles: articles)
+            //fetching the dataa
+                .onAppear(perform: {
+                    async {
+                    await articlesNewsVM.loadArticles()
+                    }
+                })
                 .navigationTitle(articlesNewsVM.selectedCategory.text)
             
         }

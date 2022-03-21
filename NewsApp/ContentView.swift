@@ -15,7 +15,6 @@ struct ContentView: View {
                     Label("News", systemImage: "newspaper")
                 }
         }
-        ArticleListView(articles: Article.previewData)
     }
 }
 
