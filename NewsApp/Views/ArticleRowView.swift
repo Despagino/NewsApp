@@ -51,6 +51,11 @@ struct ArticleRowView: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text(article.title)
                     .font(.headline)
+                    .lineLimit(3)
+                
+                Text(article.descriptionText)
+                    .font(.subheadline)
+                    .lineLimit(3)
             }
             .padding([.horizontal, .bottom])
         }
@@ -62,7 +67,7 @@ struct ArticleRowView_Previews: PreviewProvider {
         NavigationView {
                 
             List {
-                ArticleRowView(article: .previewData[0])
+                ArticleRowView(article: .previewData[1])
                 //creating how each row would be set in the each frame
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
