@@ -27,6 +27,8 @@ struct RetryView: View {
 
 struct RetryView_Previews: PreviewProvider {
     static var previews: some View {
-        RetryView()
+        RetryView(text: "An error occurred") {
+            
+        }
     }
 }

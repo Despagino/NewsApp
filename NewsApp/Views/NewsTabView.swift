@@ -15,7 +15,8 @@ struct NewsTabView: View {
     var body: some View {
         NavigationView {
             ArticleListView(articles: articles)
-            //fetching the dataa
+                .overlay(overlayView)
+            //fetching the data
                 .onAppear(perform: {
                     async {
                     await articlesNewsVM.loadArticles()
@@ -31,11 +32,15 @@ struct NewsTabView: View {
         
             switch articlesNewsVM.phase {
                 
-            case .empty: ProgressView()
-            case .success(let articles) where articles.isEmpty: EmptyPlaceholderView(text: "No articles", image: nil)
-            case .failure(let error): 
-                
-                
+            case .empty:
+                 ProgressView()
+            case .success(let articles) where articles.isEmpty:
+                 EmptyPlaceholderView(text: "No articles", image: nil)
+            case .failure(let error):
+                 RetryView(text: error.localizedDescription) {
+                // to do: refresh the news API
+            }
+
             default: EmptyView()
             }
     }
