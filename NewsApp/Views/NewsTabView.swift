@@ -16,11 +16,14 @@ struct NewsTabView: View {
         NavigationView {
             ArticleListView(articles: articles)
                 .overlay(overlayView)
+            
+            //pull to refresh method
+                .refreshable {
+                    loadTask()
+                }
             //fetching the data
                 .onAppear(perform: {
-                    async {
-                    await articlesNewsVM.loadArticles()
-                    }
+                   loadTask()
                 })
                 .navigationTitle(articlesNewsVM.selectedCategory.text)
             
@@ -38,11 +41,17 @@ struct NewsTabView: View {
                  EmptyPlaceholderView(text: "No articles", image: nil)
             case .failure(let error):
                  RetryView(text: error.localizedDescription) {
-                // to do: refresh the news API
+                     loadTask()
             }
 
             default: EmptyView()
             }
+    }
+
+    private func loadTask() {
+        async {
+        await articlesNewsVM.loadArticles()
+        }
     }
     
     // getting the data from the enum
