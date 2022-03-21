@@ -26,7 +26,6 @@ struct ArticleRowView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(height: 1)
-                        
                                          
                 case .failure:
                     Image(systemName: "photo")
@@ -35,6 +34,7 @@ struct ArticleRowView: View {
                     fatalError()
                 }
             }
+            .frame(minHeight: 200, maxHeight: 300)
         }
     }
 }
