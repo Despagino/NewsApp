@@ -29,6 +29,7 @@ struct ArticleRowView: View {
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
+                        
                                          
                 case .failure:
                     HStack {
@@ -45,6 +46,13 @@ struct ArticleRowView: View {
             }
             .frame(minHeight: 200, maxHeight: 300)
             .background(Color.gray.opacity(0.3))
+            .clipped()
+            
+            VStack(alignment: .leading, spacing: 8) {
+                Text(article.title)
+                    .font(.headline)
+            }
+            .padding([.horizontal, .bottom])
         }
     }
 }
