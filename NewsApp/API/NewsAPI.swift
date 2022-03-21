@@ -21,6 +21,7 @@ struct NewsAPI {
     }()
     
     func fetch(from category: Category) async throws -> [Article] {
+        
         let url = generalNewsURL(from: category)
         let (data, response) = try await session.data(from: url)
         
