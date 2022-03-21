@@ -16,11 +16,12 @@ struct NewsTabView: View {
         NavigationView {
             ArticleListView(articles: articles)
                 .overlay(overlayView)
-                .task(id: articlesNewsVM.selectedCategory, loadTask)
+            // everytime the timestamp changes, this function will trigger
+                .task(id: articlesNewsVM.fetchTaskToken, loadTask)
             //pull to refresh method
-//                .refreshable {
-//                    loadTask()
-//                }
+                .refreshable {
+                    loadTask()
+                }
             //fetching the data
 //                .onAppear(perform: {
 //                   loadTask()
