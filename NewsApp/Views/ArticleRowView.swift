@@ -31,7 +31,13 @@ struct ArticleRowView: View {
                         .aspectRatio(contentMode: .fill)
                                          
                 case .failure:
-                    Image(systemName: "photo")
+                    HStack {
+                        Spacer()
+                        Image(systemName: "photo")
+                            .imageScale(.large)
+                        Spacer()
+                    }
+                    
                 
                 @unknown default:
                     fatalError()
