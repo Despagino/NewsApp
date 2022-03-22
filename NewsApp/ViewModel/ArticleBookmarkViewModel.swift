@@ -15,6 +15,18 @@ class ArticleBookmarkViewModel: ObservableObject {
     @Published private(set) var bookmarks: [Article] = []
     private let bookmarkStore = PlistDataStore<[Article]>(filename: "bookmarks")
     
+    static let shared = ArticleBookmarkViewModel()
+    
+    @Sendable private init() {
+        Task {
+            await load()
+        }
+    }
+    
+    private func load() async {
+        bookmarks = await bookmarkStore.load() ?? []
+    }
+    
     
     func isBookmarked(for article: Article) -> Bool {
         bookmarks.first { article.id == $0.id } != nil
