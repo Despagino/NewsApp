@@ -18,6 +18,7 @@ struct SearchTabView: View {
                 .navigationTitle("Search")
         }
         .searchable(text: $searchVM.searchQuery)
+        .onSubmit(of: .search, search)
     }
     
     private var articles: [Article] {
