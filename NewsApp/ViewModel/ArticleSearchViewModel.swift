@@ -53,6 +53,9 @@ class ArticleSearchViewModel: ObservableObject {
         do {
             let articles = try await newsAPI.search(for: searchQuery)
             if Task.isCancelled { return }
+            if searchQuery != self.searchQuery {
+                return
+            }
             phase = .success(articles)
         } catch {
             if Task.isCancelled { return }

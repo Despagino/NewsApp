@@ -76,7 +76,6 @@ struct SearchTabView: View {
     
     private func search() {
         
-        
         let searchQuery = searchVM.searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
         if !searchQuery.isEmpty {
             searchVM.addHistory(searchQuery)

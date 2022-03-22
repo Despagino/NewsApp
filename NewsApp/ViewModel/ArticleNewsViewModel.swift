@@ -37,19 +37,19 @@ class ArticleNewsViewModel: ObservableObject {
     }
     
     func loadArticles() async {
-        phase = .success(Article.previewData)
+//        phase = .success(Article.previewData)
         // making sure we dont get the cancel option shown on the view
-//        if Task.isCancelled { return }
-//        phase = .empty
-//        do {
-//            let articles = try await newsAPI.fetch(from: fetchTaskToken.category)
-//            if Task.isCancelled { return }
-//            phase = .success(articles)
-//        } catch {
-//            if Task.isCancelled { return }
-//            phase = .failure(error)
-//        }
-//        
+        if Task.isCancelled { return }
+        phase = .empty
+        do {
+            let articles = try await newsAPI.fetch(from: fetchTaskToken.category)
+            if Task.isCancelled { return }
+            phase = .success(articles)
+        } catch {
+            if Task.isCancelled { return }
+            phase = .failure(error)
+        }
+        
     }
     
 }
