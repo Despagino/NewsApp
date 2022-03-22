@@ -12,6 +12,9 @@ class ArticleSearchViewModel: ObservableObject {
     
     @Published var phase: DataFetchPhase<[Article]> = .empty
     @Published var searchQuery = ""
+    @Published var history = [String]()
+    
+    
     private let newsAPI = NewsAPI.shared
     
     func searchArticle() async {
