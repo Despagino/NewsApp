@@ -17,7 +17,7 @@ struct SearchTabView: View {
                 .overlay(overlayView)
                 .navigationTitle("Search")
         }
-        .searchable(text: $searchVM.searchQuery)
+        .searchable(text: $searchVM.searchQuery) { suggestionsView }
         .onChange(of: searchVM.searchQuery) { newValue in
             if newValue.isEmpty {
                 searchVM.phase = .empty
