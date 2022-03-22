@@ -38,6 +38,7 @@ class ArticleBookmarkViewModel: ObservableObject {
         }
         
         bookmarks.insert(article, at: 0)
+        bookmarkUpdated()
     }
     
     func removeBookmark(for article: Article) {
@@ -45,5 +46,13 @@ class ArticleBookmarkViewModel: ObservableObject {
             return
         }
         bookmarks.remove(at: index)
+        bookmarkUpdated()
+    }
+    
+    private func bookmarkUpdated() {
+        let bookmarks = self.bookmarks
+        Task {
+            await bookmarkStore.save(bookmarks)
+        }
     }
 }
