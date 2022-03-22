@@ -18,7 +18,7 @@ struct SearchHistoryListView: View {
                 Text("Recently Searched")
                 Spacer()
                 Button("Clear") {
-                    
+                    searchVM.removeAllHistory()
                 }
             }
         }
