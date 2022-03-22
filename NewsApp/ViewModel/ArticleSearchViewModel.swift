@@ -27,8 +27,11 @@ class ArticleSearchViewModel: ObservableObject {
     }
     
     func removeHistory(_ text: String) {
-        
-        
+        guard let index = history.firstIndex(where: { text.lowercased() == $0.lowercased() })
+        else {
+            return
+        }
+        history.remove(at: index)
     }
     
     
