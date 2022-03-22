@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ArticleRowView: View {
     
+    @EnvironmentObject var articleBookmarkVM: ArticleBookmarkViewModel
+    
     let article: Article
     
     var body: some View {
@@ -68,7 +70,7 @@ struct ArticleRowView: View {
                     Button {
                         
                     } label: {
-                        Image(systemName: "bookmark")
+                        Image(systemName: articleBookmarkVM.isBookmarked(for: article) ? "bookmark.fill" : "bookmark")
                     }
                     .buttonStyle(.bordered)
                     Button {
@@ -80,6 +82,14 @@ struct ArticleRowView: View {
                 }
             }
             .padding([.horizontal, .bottom])
+        }
+    }
+    
+    private func toggleBookmark(for article: Article) {
+        if articleBookmarkVM.isBookmarked(for: article) {
+            articleBookmarkVM.removeBookmark(for: article)
+        } else {
+            articleBookmarkVM.addBookMark(for: article)
         }
     }
 }
