@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchHistoryListView: View {
     
     @ObservedObject var searchVM: ArticleSearchViewModel
-    let onSubmit: () -> ()
+    let onSubmit: (String) -> ()
     
     var body: some View {
         List {
@@ -21,14 +21,21 @@ struct SearchHistoryListView: View {
                     searchVM.removeAllHistory()
                 }
             }
+            .listRowSeparator(.hidden)
+            
+            ForEach(searchVM.history, id: \.self) { history in
+                Button(history) {
+                onSubmit(history)
+                }
+            }
         }
     }
 }
 
 struct SearchHistoryListView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchHistoryListView(searchVM: ArticleSearchViewModel()) {
-            
+        SearchHistoryListView(searchVM: ArticleSearchViewModel()) { _ in
+                
         }
     }
 }
