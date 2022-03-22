@@ -57,6 +57,18 @@ struct SearchTabView: View {
         
     }
     
+    
+    @ViewBuilder
+    private var suggestionsView: some View {
+        ForEach(["Swift", "Bitcoin", "Tesla", "IOS"], id: \.self) { text in Button {
+            searchVM.searchQuery = text
+        }
+        label: {
+            Text(text)
+        }
+    }
+}
+    
     private func search() {
         Task {
             await searchVM.searchArticle()
