@@ -14,8 +14,10 @@ struct SearchTabView: View {
     var body: some View {
         NavigationView {
             ArticleListView(articles: articles)
+                .overlay(overlayView)
+                .navigationTitle("Search")
         }
-        
+        .searchable(text: $searchVM.searchQuery)
     }
     
     private var articles: [Article] {
@@ -23,6 +25,35 @@ struct SearchTabView: View {
             return articles
         } else {
             return []
+        }
+    }
+    
+    @ViewBuilder
+    private var overlayView: some View {
+        switch searchVM.phase {
+            
+        case .empty:
+            if !searchVM.searchQuery.isEmpty {
+                ProgressView()
+            } else {
+                EmptyPlaceholderView(text: "Type your query to search from News API", image: Image(systemName: "magnifyingglass"))
+            }
+            
+        case .success(let articles) where articles.isEmpty:
+            EmptyPlaceholderView(text: "No search results found", image: Image(systemName: "magnifyingglass"))
+            
+        case .failure(let error):
+            RetryView(text: error.localizedDescription, retryAction: search)
+            
+        default: EmptyView()
+            
+        }
+        
+    }
+    
+    private func search() {
+        Task {
+            await searchVM.searchArticle()
         }
     }
 }
@@ -37,3 +68,4 @@ struct SearchTabView_Previews: PreviewProvider {
             .environmentObject(bookmarkVM)
     }
 }
+
