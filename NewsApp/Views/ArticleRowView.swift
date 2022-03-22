@@ -106,6 +106,9 @@ extension View {
 
 
 struct ArticleRowView_Previews: PreviewProvider {
+    
+    @StateObject static var articleBookmarkVM = ArticleBookmarkViewModel()
+    
     static var previews: some View {
         NavigationView {
                 
@@ -118,5 +121,6 @@ struct ArticleRowView_Previews: PreviewProvider {
             .listStyle(.plain)
      
         }
+        .environmentObject(articleBookmarkVM)
     }
 }
