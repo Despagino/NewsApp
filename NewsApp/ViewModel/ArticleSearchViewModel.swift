@@ -38,6 +38,7 @@ class ArticleSearchViewModel: ObservableObject {
         history.removeAll()
     }
     
+    
     func searchArticle() async {
         
         if Task.isCancelled { return }
