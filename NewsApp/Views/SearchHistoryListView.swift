@@ -27,6 +27,13 @@ struct SearchHistoryListView: View {
                 Button(history) {
                 onSubmit(history)
                 }
+                .swipeActions {
+                    Button(role: .destructive) {
+                        searchVM.removeHistory(history)
+                    } label: {
+                        Label("Delete", systemImage: "trash")
+                    }
+                }
             }
         }
     }
