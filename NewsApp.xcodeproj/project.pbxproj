@@ -28,6 +28,7 @@
 		D3936E5027E92BD800B16155 /* NewsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3936E4F27E92BD800B16155 /* NewsTabView.swift */; };
 		D3A499B327E99D2700FBCDED /* ArticleSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A499B227E99D2700FBCDED /* ArticleSearchViewModel.swift */; };
 		D3A499B527E99E9C00FBCDED /* SearchTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A499B427E99E9C00FBCDED /* SearchTabView.swift */; };
+		D3A499B727EA25FC00FBCDED /* SearchHistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A499B627EA25FB00FBCDED /* SearchHistoryListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		D3936E4F27E92BD800B16155 /* NewsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTabView.swift; sourceTree = "<group>"; };
 		D3A499B227E99D2700FBCDED /* ArticleSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSearchViewModel.swift; sourceTree = "<group>"; };
 		D3A499B427E99E9C00FBCDED /* SearchTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabView.swift; sourceTree = "<group>"; };
+		D3A499B627EA25FB00FBCDED /* SearchHistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				D33E679A27E931C000DE4051 /* RetryView.swift */,
 				D328EF8F27E98E4500E86C58 /* BookmarkTabView.swift */,
 				D3A499B427E99E9C00FBCDED /* SearchTabView.swift */,
+				D3A499B627EA25FB00FBCDED /* SearchHistoryListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				D30F41E827E9054C00BE43DD /* ArticleListView.swift in Sources */,
 				D33E679927E9312800DE4051 /* EmptyPlaceholderView.swift in Sources */,
 				D36BC02727E8F3F200522F6A /* ArticleRowView.swift in Sources */,
+				D3A499B727EA25FC00FBCDED /* SearchHistoryListView.swift in Sources */,
 				D33E679B27E931C000DE4051 /* RetryView.swift in Sources */,
 				D36BC01127E8E59000522F6A /* NewsAppApp.swift in Sources */,
 				D36BC02427E8F23400522F6A /* NewsAPIResponse.swift in Sources */,
