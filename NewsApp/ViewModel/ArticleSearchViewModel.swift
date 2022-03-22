@@ -34,6 +34,9 @@ class ArticleSearchViewModel: ObservableObject {
         history.remove(at: index)
     }
     
+    func removeAllHistory() {
+        history.removeAll()
+    }
     
     func searchArticle() async {
         
