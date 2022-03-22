@@ -8,13 +8,27 @@
 import SwiftUI
 
 struct SearchHistoryListView: View {
+    
+    @ObservedObject var searchVM: ArticleSearchViewModel
+    let onSubmit: () -> ()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            HStack {
+                Text("Recently Searched")
+                Spacer()
+                Button("Clear") {
+                    
+                }
+            }
+        }
     }
 }
 
 struct SearchHistoryListView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchHistoryListView()
+        SearchHistoryListView(searchVM: ArticleSearchViewModel()) {
+            
+        }
     }
 }
