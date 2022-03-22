@@ -13,6 +13,8 @@ class ArticleBookmarkViewModel: ObservableObject {
     
     
     @Published private(set) var bookmarks: [Article] = []
+    private let bookmarkStore = PlistDataStore<[Article]>(filename: "bookmarks")
+    
     
     func isBookmarked(for article: Article) -> Bool {
         bookmarks.first { article.id == $0.id } != nil
