@@ -68,7 +68,7 @@ struct ArticleRowView: View {
                     Spacer()
                     
                     Button {
-                        
+                        toggleBookmark(for: article)
                     } label: {
                         Image(systemName: articleBookmarkVM.isBookmarked(for: article) ? "bookmark.fill" : "bookmark")
                     }
