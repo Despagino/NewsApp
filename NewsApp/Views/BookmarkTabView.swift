@@ -12,7 +12,22 @@ struct BookmarkTabView: View {
     @EnvironmentObject var articleBookmarkVM: ArticleBookmarkViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            
+            ArticleListView(articles: articleBookmarkVM.bookmarks)
+                .overlay(overlayView(isEmpty: articleBookmarkVM.bookmarks.isEmpty))
+                .navigationTitle("Saved Articles")
+            
+            
+        }
+    }
+    
+    // if there are no bookmarks
+    @ViewBuilder
+    func overlayView(isEmpty: Bool) -> some View {
+        if isEmpty {
+            EmptyPlaceholderView(text: "No saved articles", image: Image(systemName: "bookmark"))
+        }
     }
 }
 
