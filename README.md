@@ -11,7 +11,7 @@ Using newsAPI to get the latest news, you can choose which category you want to 
 - Design: MVVM
 
 ## Gif of App
-### Main Layout, Able to Choose Categories and Add to Bookmarks
+### Able to Choose Categories and Add to Bookmarks
 ![1](https://user-images.githubusercontent.com/80994897/159547152-430d6fd7-b981-4841-90bc-f7be985b0769.gif)
 ![2](https://user-images.githubusercontent.com/80994897/159547185-361fcc64-2802-4aa4-84c8-e5e9cf042142.gif) 
 ### Search for news
