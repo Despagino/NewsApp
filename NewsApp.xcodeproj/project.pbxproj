@@ -26,6 +26,7 @@
 		D3936E4327E9177300B16155 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3936E4227E9177300B16155 /* Category.swift */; };
 		D3936E4E27E9286A00B16155 /* ArticleNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3936E4D27E9286A00B16155 /* ArticleNewsViewModel.swift */; };
 		D3936E5027E92BD800B16155 /* NewsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3936E4F27E92BD800B16155 /* NewsTabView.swift */; };
+		D3A499B327E99D2700FBCDED /* ArticleSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A499B227E99D2700FBCDED /* ArticleSearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		D3936E4227E9177300B16155 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D3936E4D27E9286A00B16155 /* ArticleNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNewsViewModel.swift; sourceTree = "<group>"; };
 		D3936E4F27E92BD800B16155 /* NewsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTabView.swift; sourceTree = "<group>"; };
+		D3A499B227E99D2700FBCDED /* ArticleSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			children = (
 				D3936E4D27E9286A00B16155 /* ArticleNewsViewModel.swift */,
 				D33E679C27E93EA300DE4051 /* ArticleBookmarkViewModel.swift */,
+				D3A499B227E99D2700FBCDED /* ArticleSearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				D33E679B27E931C000DE4051 /* RetryView.swift in Sources */,
 				D36BC01127E8E59000522F6A /* NewsAppApp.swift in Sources */,
 				D36BC02427E8F23400522F6A /* NewsAPIResponse.swift in Sources */,
+				D3A499B327E99D2700FBCDED /* ArticleSearchViewModel.swift in Sources */,
 				D3936E4327E9177300B16155 /* Category.swift in Sources */,
 				D3936E4E27E9286A00B16155 /* ArticleNewsViewModel.swift in Sources */,
 				D33E679D27E93EA300DE4051 /* ArticleBookmarkViewModel.swift in Sources */,
